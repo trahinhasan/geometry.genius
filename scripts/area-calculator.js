@@ -1,4 +1,4 @@
-function calulateTriangleArea() {
+function calculateTriangleArea() {
   const baseField = document.getElementById("triangle-base");
   const baseValueText = baseField.value;
   const base = parseFloat(baseValueText);
@@ -13,7 +13,7 @@ function calulateTriangleArea() {
   areaSpan.innerText = area;
 }
 
-function calulateRectangleArea() {
+function calculateRectangleArea() {
   const widthField = document.getElementById("rectangle-width");
   const widthValueText = widthField.value;
   const width = parseFloat(widthValueText);
@@ -25,4 +25,28 @@ function calulateRectangleArea() {
   const area = width * length;
   const rectangleAreaSpan = document.getElementById("rectangle-area");
   rectangleAreaSpan.innerText = area;
+}
+// reusable fucntion
+
+function calculateParallelogramArea() {
+  const base = getInputValue("parallelogram-base");
+  const height = getInputValue("parallelogram-height");
+
+  const area = base * height;
+  setElementInnerText("parallelogram-area", area);
+}
+
+// reusable fucntion input
+function getInputValue(fieldId) {
+  const inputField = document.getElementById(fieldId);
+  const inputValueText = inputField.value;
+  const value = parseFloat(inputValueText);
+  return value;
+}
+
+// reusable set span
+
+function setElementInnerText(elementId, area) {
+  const element = document.getElementById(elementId);
+  element.innerText = area;
 }
